@@ -27,13 +27,12 @@ public class MainActivity extends AppCompatActivity {
 
         handler = new Handler();
 
-        // Runnable to update the stopwatch time
         updateTimerThread = new Runnable() {
             public void run() {
                 timeInMilliseconds = SystemClock.uptimeMillis() - startTime;
                 updateTime = timeSwapBuff + timeInMilliseconds;
                 updateDisplay();
-                handler.postDelayed(this, 1000); // Update every 1 second
+                handler.postDelayed(this, 1000);
             }
         };
 
